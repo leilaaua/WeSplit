@@ -54,12 +54,14 @@ struct ContentView: View {
                 
                 Section {
                     Text(totalPerPerson, format: .currency(code: Locale.current.currencyCode ?? "USD"))
+                        .foregroundColor(tipPercentage == 0 ? .red : .black)
                 } header: {
                     Text("Amount per person")
                 }
-            
                 
-            .navigationTitle("We Split")
+                
+                .navigationTitle("We Split")
+            }
             .toolbar {
                 ToolbarItemGroup(placement: .keyboard) {
                     Spacer()
@@ -70,7 +72,6 @@ struct ContentView: View {
             }
         }
     }
-}
 }
 
 struct ContentView_Previews: PreviewProvider {
